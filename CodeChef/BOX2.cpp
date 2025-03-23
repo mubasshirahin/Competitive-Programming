@@ -73,7 +73,7 @@ int main()
         int i ;
         
 
-        for(i=0;i<100000000;i++){
+        for(i=0;i<100000;i++){
             diff = abs(a-b);
             if(diff == k){
                 cout<<cnt<<endl;
@@ -90,7 +90,7 @@ int main()
             cnt++;
         }
 
-        if(i==100000000){
+        if(i==100000){
             cout<<"-1"<<endl;
         }
 

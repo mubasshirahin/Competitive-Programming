@@ -59,15 +59,31 @@ int main()
 {
     grumpyonion();
  
-    int a,b,c;
-    cin>>a>>b>>c;
+    int n;
+    cin >> n;
 
-    if(a+b<=c || b+c<=a || a+c<=b){
-        cout<<"No"<<endl;
-        return 0;
+    vector<pair<int,int>> v;
+
+    for(int i=0;i<n;i++){
+        int x,y;
+        cin >> x >> y;
+        v.push_back({x,y});
     }
-    
-    cout<<"Yes"<<endl;
+
+    double maxAns = INT_MIN;
+
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            double t1 = (v[i].first - v[j].first)*(v[i].first - v[j].first);
+            double t2 = (v[i].second - v[j].second)*(v[i].second - v[j].second);
+
+            double ans = sqrt(t1+t2);
+            
+            maxAns = max(maxAns,ans);
+        }
+    }
  
+    printf("%.10lf", maxAns);
+
  return 0;
 }

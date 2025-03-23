@@ -59,15 +59,19 @@ int main()
 {
     grumpyonion();
  
-    int a,b,c;
-    cin>>a>>b>>c;
+    int n;
+    cin>>n;
 
-    if(a+b<=c || b+c<=a || a+c<=b){
-        cout<<"No"<<endl;
-        return 0;
+    int cnt = 0;
+
+    for(int i=1;i<=n;i++){
+        for(int j=i;j<=n;j++){
+            int c = sqrt(i*i + j*j);
+            if(c<=n && c*c == i*i + j*j) cnt++;
+        }
     }
-    
-    cout<<"Yes"<<endl;
+
+    cout<<cnt<<endl;
  
  return 0;
 }

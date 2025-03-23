@@ -58,16 +58,34 @@ void scanVec(vector<int>& v, int size) { for (int i = 0; i < size; i++) { int x;
 int main()
 {
     grumpyonion();
- 
-    int a,b,c;
-    cin>>a>>b>>c;
 
-    if(a+b<=c || b+c<=a || a+c<=b){
-        cout<<"No"<<endl;
-        return 0;
-    }
+    int t;
+    cin>>t;
+
+    while(t--){
+        char arr[3][3];
+
+        int tmp = 0;
     
-    cout<<"Yes"<<endl;
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                cin>>arr[i][j];
+                if(arr[i][j]=='?'){
+                    tmp = i;
+                    arr[i][j] = '\0';
+                }
+            }
+        }
+    
+        int sum = 65+66+67;
+    
+        int sum2 = (int)arr[tmp][0] + (int)arr[tmp][1] + (int)arr[tmp][2];
+    
+        cout<<char(sum-sum2)<<endl;
+    
+    
+    }
+
  
  return 0;
 }
