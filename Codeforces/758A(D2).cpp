@@ -68,31 +68,16 @@ int main()
 
         if(n==1){
             cout<<"1"<<endl;
-            continue;;
-        }
-
-        if(n==2){
-            cout<<"2 1"<<endl;
             continue;
         }
 
-        vi ans;
-        ans.push_back(1);
+        int k=2;
 
-        for(int i=1;i<n-1;i++){
-            ans.push_back(i+2);
-        }
-
-        int sum1 = (n*(n+1))/2;
-        int sum2 = accumulate(all(ans),0);
-
-        ans.push_back(sum1-sum2);
-
-        printVec(ans);
+        for(int i=1;i<=n;i++){
+            cout<<k<<" ";
+            k++;
+        }cout<<endl;
     }
-
-
-
  
  return 0;
 }

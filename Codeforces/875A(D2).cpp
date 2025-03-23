@@ -66,33 +66,21 @@ int main()
         int n;
         cin>>n;
 
-        if(n==1){
-            cout<<"1"<<endl;
-            continue;;
-        }
-
-        if(n==2){
-            cout<<"2 1"<<endl;
-            continue;
-        }
-
+        vi v;
         vi ans;
-        ans.push_back(1);
+        scanVec(v, n);
 
-        for(int i=1;i<n-1;i++){
-            ans.push_back(i+2);
+        int maxi = *max_element(all(v));
+        int mini = 1;
+
+        int sum = maxi + mini;
+
+        for(int i=0;i<n;i++){
+            ans.push_back(sum-v[i]);
         }
-
-        int sum1 = (n*(n+1))/2;
-        int sum2 = accumulate(all(ans),0);
-
-        ans.push_back(sum1-sum2);
 
         printVec(ans);
     }
-
-
-
  
  return 0;
 }

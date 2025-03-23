@@ -59,39 +59,30 @@ int main()
 {
     grumpyonion();
  
-    int t;
-    cin>>t;
+    int n;
+    cin>>n;
 
-    while(t--){
-        int n;
-        cin>>n;
-
-        if(n==1){
-            cout<<"1"<<endl;
-            continue;;
-        }
-
-        if(n==2){
-            cout<<"2 1"<<endl;
-            continue;
-        }
-
-        vi ans;
-        ans.push_back(1);
-
-        for(int i=1;i<n-1;i++){
-            ans.push_back(i+2);
-        }
-
-        int sum1 = (n*(n+1))/2;
-        int sum2 = accumulate(all(ans),0);
-
-        ans.push_back(sum1-sum2);
-
-        printVec(ans);
+    if(n==1){
+        cout<<1<<endl;
+        return 0;
     }
 
+    if(n==2 || n==3){
+        cout<<"NO SOLUTION"<<endl;
+        return 0;
+    }
 
+    for(int i=1;i<=n;i++){
+        if(i%2==0){
+            cout<<i<<" ";
+        }
+    }
+
+    for(int i=1;i<=n;i++){
+        if(i%2==1){
+            cout<<i<<" ";
+        }
+    }
 
  
  return 0;
