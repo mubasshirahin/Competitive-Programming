@@ -55,19 +55,46 @@ void scanVec(vector<int>& v, int size) { for (int i = 0; i < size; i++) { int x;
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
-int main()
-{
+
+int main() {
     grumpyonion();
  
-    int n;
-    cin>>n;
+    string s;
+    cin >> s;
 
-    for(int i=10;i>0;i--){
-        if(n%i==0){
-            cout<<i<<endl;
-            break;
+    int i = 0;
+    int j = s.size() - 1;
+    int maxL1 = 0;
+
+    while (i <= j) {
+        if (s[i] == s[j]) {
+            maxL1 = max(maxL1, j - i + 1);
+            i++;
+            j--;
+        } else {
+            j--;
+            maxL1 = 0;
         }
     }
- 
- return 0;
+
+    int maxL2 = 0;
+
+    reverse(s.begin(), s.end());
+    i = 0;
+    j = s.size() - 1;
+
+    while (i <= j) {
+        if (s[i] == s[j]) {
+            maxL2 = max(maxL2, j - i + 1);
+            i++;
+            j--;
+        } else {
+            j--;
+            maxL2 = 0;
+        }
+    }
+
+    cout << max(maxL1, maxL2) << endl;
+
+    return 0;
 }

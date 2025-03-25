@@ -59,14 +59,32 @@ int main()
 {
     grumpyonion();
  
-    int n;
-    cin>>n;
+    int t;
+    cin>>t;
 
-    for(int i=10;i>0;i--){
-        if(n%i==0){
-            cout<<i<<endl;
-            break;
+    while(t--){
+
+        int cntZero = 0;
+        int cntOne = 0;
+
+        vi v(3);
+
+        for(int i=0;i<3;i++){
+            cin>>v[i];
+
+            if(v[i]==1){
+                cntOne++;
+            }
+            else{
+                cntZero++;
+            }
         }
+        
+        if(cntOne && cntZero)cout<<"1"<<endl;
+        else{
+            cout<<"0"<<endl;
+        }
+
     }
  
  return 0;

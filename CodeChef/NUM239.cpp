@@ -59,15 +59,37 @@ int main()
 {
     grumpyonion();
  
-    int n;
-    cin>>n;
+    int t;
+    cin>>t;
 
-    for(int i=10;i>0;i--){
-        if(n%i==0){
-            cout<<i<<endl;
-            break;
+    while(t--){
+        int a,b;
+        cin>>a>>b;
+
+        int x = ((a/10)+1)*10;   
+        int y = (b/10)*10;
+
+        int diff = y-x;
+        int fullBlock = diff/10;
+
+        fullBlock*=3;
+
+        for(int i=a;i<=x;i++){
+            if(i%10==2 || i%10==3 || i%10==9){
+                fullBlock++;
+            }
         }
-    }
- 
+        
+        for(int i=y;i<=b;i++){
+            if(i%10==2 || i%10==3 || i%10==9){
+                fullBlock++;
+            }
+        }
+
+
+
+        cout<<fullBlock<<endl;
+    } 
+
  return 0;
 }

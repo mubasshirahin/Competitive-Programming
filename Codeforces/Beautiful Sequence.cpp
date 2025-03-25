@@ -59,14 +59,27 @@ int main()
 {
     grumpyonion();
  
-    int n;
-    cin>>n;
+    int t;cin>>t;
 
-    for(int i=10;i>0;i--){
-        if(n%i==0){
-            cout<<i<<endl;
-            break;
+    while(t--){
+        int n;
+        cin>>n;
+
+        bool check = false;
+
+        vi v;
+        scanVec(v,n);
+
+        for(int i=0;i<n;i++){
+
+            if(v[i]<=i+1){
+                check = true;
+                break;
+            }
         }
+
+        if(check)cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
     }
  
  return 0;

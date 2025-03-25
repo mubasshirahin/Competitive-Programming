@@ -62,12 +62,18 @@ int main()
     int n;
     cin>>n;
 
-    for(int i=10;i>0;i--){
-        if(n%i==0){
-            cout<<i<<endl;
-            break;
+    for(int i=0;i<100;i++){
+        for(int j=0;j<100;j++){
+            int tmp = pow(2,i)*pow(3,j);
+
+            if(tmp == n){
+                cout<<"Yes"<<endl;
+            return 0;
+            }
         }
     }
+
+    cout<<"No"<<endl;
  
  return 0;
 }

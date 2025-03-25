@@ -59,15 +59,44 @@ int main()
 {
     grumpyonion();
  
-    int n;
-    cin>>n;
+    int t;
+    cin>>t;
 
-    for(int i=10;i>0;i--){
-        if(n%i==0){
-            cout<<i<<endl;
-            break;
-        }
+    while(t--){
+        string s1;
+        string s2;
+        string s3;
+
+        cin>>s1>>s2>>s3;
+
+        char winner = '.';
+
+
+    if(s1[0]==s1[1] && s1[0]==s1[2])winner = s1[0];
+    else if(s2[0]==s2[1] && s2[0]==s2[2])winner = s2[0];
+    else if(s3[0]==s3[1] && s3[0]==s3[2])winner = s3[0];
+
+    else if(s1[0]==s2[0] && s1[0]==s3[0])winner = s1[0];
+    else if(s1[1]==s2[1] && s1[1]==s3[1])winner = s1[1];
+    else if(s1[2]==s2[2] && s1[2]==s3[2])winner = s1[2];
+
+    else if(s1[0]==s2[1] && s1[0]==s3[2])winner = s1[0];
+    else if(s1[2]==s2[1] && s1[2]==s3[0])winner = s1[2];
+
+
+    if(winner != '.'){
+        cout<<winner<<endl;
     }
+    else{
+        cout<<"DRAW"<<endl;        
+    }
+
+
+
+
+
+    }
+
  
  return 0;
 }
