@@ -66,24 +66,28 @@ void scanVec(vector<int>& v, int size) { for (int i = 0; i < size; i++) { int x;
 int main()
 {
     grumpyonion();
+    
+    int t;
+    cin>>t;
+    while(t--){ 
+        int n;
+        cin>>n;
 
-    int n,m;
-    cin>>n>>m;
+        string s;
+        cin >> s;
 
-    int arr[n][m];
+        transform(s.begin(),s.end(),s.begin(),::tolower);
 
-    int k = 1;
+        s.erase(unique(all(s)),s.end());
 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            arr[i][j] = k++;
+        if(s=="meow"){
+            py;
         }
-    }
+        else{
+            pn;
+        }
 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            cout<<arr[i][j]<<" ";
-        }cout<<endl;
+
     }
 
 return 0;

@@ -64,40 +64,80 @@ bool isPrime(int n) {if (n <= 1) return false;if (n <= 3) return true;if (n % 2 
 
 int main()
 {
-       int n;
-       cin>>n;
-       vector<int>v;
-       scanVec(v,n);
-       int sum1=0;//sareja
-       int sum2=0;
+       // int n;
+       // cin>>n;
+       // vector<int>v;
+       // scanVec(v,n);
+       // int sum1=0;//sareja
+       // int sum2=0;
        
-       for(int i=1;i<=n;i++){
-              if(i%2==1){
-                     if(v.front()>v.back()){
-                            sum1= sum1+v.front();
-                            v.erase(v.begin());                            
-                     }
-                     else{
-                            sum1=sum1+v.back();
-                            v.pop_back();
-                     }
-              }
-              else{
-                     if(v.front()>v.back()){
-                            sum2= sum2+v.front();
-                            v.erase(v.begin());                            
-                     }
-                     else{
-                            sum2=sum2+v.back();
-                            v.pop_back();
-                     }
+       // for(int i=1;i<=n;i++){
+       //        if(i%2==1){
+       //               if(v.front()>v.back()){
+       //                      sum1= sum1+v.front();
+       //                      v.erase(v.begin());                            
+       //               }
+       //               else{
+       //                      sum1=sum1+v.back();
+       //                      v.pop_back();
+       //               }
+       //        }
+       //        else{
+       //               if(v.front()>v.back()){
+       //                      sum2= sum2+v.front();
+       //                      v.erase(v.begin());                            
+       //               }
+       //               else{
+       //                      sum2=sum2+v.back();
+       //                      v.pop_back();
+       //               }
 
-              }
+       //        }
 
               
+       // }
+
+       // cout<<sum1<<" "<<sum2<<endl;
+
+       int n;
+       cin>>n;
+
+       vector<int> v;
+       scanVec(v,n);
+
+       int start = 0;
+       int end = n-1;
+
+       int sum1 = 0;
+       int sum2 = 0;
+
+       int t = 1;
+
+       while(start<=end){
+
+              int max = 0;
+
+              if(v[start]>=v[end]){
+                     max = v[start];
+                     start++;
+              }
+              else{
+                     max = v[end];
+                     end--;
+              }
+
+              if(t%2==1){
+                     sum1+=max;
+              }
+              else{
+                     sum2+=max;
+              }  
+              t++;            
        }
 
        cout<<sum1<<" "<<sum2<<endl;
+
+
 
 
 
