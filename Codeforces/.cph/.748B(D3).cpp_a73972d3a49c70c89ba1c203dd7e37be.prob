@@ -1,0 +1,1 @@
+{"name":"Local: 748B(D3)","url":"d:\\CP\\Competitive-Programming\\Codeforces\\748B(D3).cpp","tests":[{"id":1755608050628,"input":"5\n100\n71345\n3259\n50555\n2050047\n","output":"0\n3\n1\n3\n2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CP\\Competitive-Programming\\Codeforces\\748B(D3).cpp","group":"local","local":true}
